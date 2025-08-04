@@ -27,6 +27,7 @@ function routes:findBestRoute(url)
     return bestRoute, self[bestRoute]
 end
 
+-- Работа с пользовательским запросом
 local function onRequest(req, res)
     do
         -- Логирование запроса
