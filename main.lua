@@ -17,7 +17,7 @@ local routes = {
 function routes:findBestRoute(url)
     if self[url] then return url, self[url] end
 
-    local best_route, best_length = "/", 1
+    local best_route, best_length = nil, 0
 
     for route in pairs(self) do
         if strtools.starts_with(url, route) and #route > best_length then
