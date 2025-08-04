@@ -2,7 +2,9 @@ local server_ip = "127.0.0.1"
 local server_port = "8080"
 local log_file = io.stdout
 
-local http = require('http')
+local http = require("http")
+
+local strtools = require("tools.string")
 
 -- Маршруты и соответствующие им контроллеры
 local routes = {
@@ -15,16 +17,15 @@ local routes = {
 function routes:findBestRoute(url)
     if self[url] then return url, self[url] end
 
-    local bestRoute = "/"
-    local bestLength = 1
+    local best_route, best_length = "/", 1
 
     for route in pairs(self) do
-        if url:sub(1, #route) == route and #route > bestLength then
-            bestRoute, bestLength = route, #route
+        if strtools.starts_with(url, route) and #route > best_length then
+            best_route, best_length = route, #route
         end
     end
 
-    return bestRoute, self[bestRoute]
+    return best_route, self[best_route]
 end
 
 -- Работа с пользовательским запросом
@@ -50,6 +51,7 @@ local function onRequest(req, res)
     end
 end
 
+-- 
 local function main()
     do
         -- Запуск сервера
