@@ -5,4 +5,4 @@ local function index(req, res)
     res:finish(body)
 end
 
-return index
+return { index = index }

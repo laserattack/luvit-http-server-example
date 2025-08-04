@@ -6,8 +6,8 @@ local http = require('http')
 
 -- Маршруты и соответствующие им контроллеры
 local routes = {
-    ["/"] = require("controllers.home"),
-    ["/about"] = require("controllers.about")
+    ["/"] = require("controllers.home").index,
+    ["/about"] = require("controllers.about").index
 }
 
 -- Возвращает лучший маршрут (самый похожий на запрашиваемый URL)
