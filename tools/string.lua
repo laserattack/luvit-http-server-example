@@ -1,3 +1,4 @@
+-- Проверяет начинается ли строка string со строки substring
 local function starts_with(sting, substring)
     for i = 1, #substring do
         if sting:byte(i) ~= substring:byte(i) then
