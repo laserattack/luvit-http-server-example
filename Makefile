@@ -1,4 +1,4 @@
-# Makefile for Luvit HTTP server project
+# Makefile for get Lua runtime
 
 ENVIRONMENT_DIR := environment
 INSTALL_SCRIPT := https://github.com/luvit/lit/raw/master/get-lit.sh
