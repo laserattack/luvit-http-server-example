@@ -1,4 +1,4 @@
-local server_ip = "127.0.0.1"
+local server_ip = "0.0.0.0"
 local server_port = "8080"
 local log_file = io.stdout
 
