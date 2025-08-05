@@ -28,7 +28,7 @@ docker rmi luvit-server 2>/dev/null || true
 docker builder prune -f
 ```
 
-## Я параноик
+## Бэкапчики
 
 Сборка/пересборка сайта + сохранение докер-образа на диск
 
