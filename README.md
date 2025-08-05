@@ -2,7 +2,7 @@
 
 Зависимости: Docker, интернет-соединение
 
-Сборка/пересборка сайта + запуск в докер-контейнере
+Сборка/пересборка сайта + запуск
 
 ```bash
 docker stop $(docker ps -aq --filter ancestor=luvit-server) 2>/dev/null
@@ -36,7 +36,7 @@ docker rmi luvit-server 2>/dev/null || true
 docker builder prune -f
 ```
 
-Загрузка докер-образа с диска + запуск в докер-контейнере
+Загрузка докер-образа с диска + запуск сайта
 
 ```bash
 docker stop $(docker ps -aq --filter ancestor=luvit-server) 2>/dev/null
