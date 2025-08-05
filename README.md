@@ -21,3 +21,17 @@ docker rm $(docker ps -aq --filter ancestor=luvit-server) 2>/dev/null
 docker rmi luvit-server 2>/dev/null || true
 docker builder prune -f
 ```
+
+## Я параноик
+
+Сохранение докер-образа на диск
+
+```bash
+docker save -o luvit-server.tar luvit-server
+```
+
+Загрузка докер-образа с диска
+
+```bash
+docker load -i luvit-server.tar
+```
