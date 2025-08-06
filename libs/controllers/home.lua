@@ -1,4 +1,4 @@
-local model = require("mvc/models/home")
+local model = require("models/home")
 
 return function (req, res)
     res.body = model.createPage()

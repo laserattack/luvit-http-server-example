@@ -3,5 +3,6 @@ return {
     version = "0.0.0",
     dependencies = {
         "creationix/weblit",
+        "creationix/hoedown",
     }
 }
