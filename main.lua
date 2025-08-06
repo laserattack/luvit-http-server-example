@@ -1,10 +1,9 @@
+local pwd = require("tools/env").pwd
+package.path = pwd().."/deps/?.lua;"..package.path
+
 local weblit = require('weblit')
-
----@type fun()
-local static = require('weblit-static')
-
----@type fun()
-local pathJoin = require('luvi').path.join
+local pathJoin = require('pathjoin').pathJoin ---@type function
+local static = require('weblit-static') ---@type function
 
 weblit.app
 
@@ -13,10 +12,8 @@ weblit.app
     .use(require('weblit-logger'))
     .use(require('weblit-auto-headers'))
 
-    .route({ method = "GET", path = "/" }, require("controllers.home"))
-    .route({ method = "GET", path = "/about" }, require("controllers.about"))
+    .route({ method = "GET", path = "/" }, require("mvc/controllers/home"))
 
-    ---@diagnostic disable-next-line undefined-field
-    .use(static(pathJoin(module.dir, "assets")))
+    .use(static(pathJoin(pwd(), "assets")))
 
     .start()

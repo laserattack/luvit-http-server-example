@@ -15,11 +15,11 @@ $(ENVIRONMENT_DIR)/%:
 	@mkdir -p $(ENVIRONMENT_DIR)
 	@cd $(ENVIRONMENT_DIR) && (curl -L $(INSTALL_SCRIPT) | sh)
 	@echo "Downloading deps..."
-	@$(ENVIRONMENT_DIR)/lit install creationix/weblit
+	@$(ENVIRONMENT_DIR)/lit install
 
 $(DEPS_DIR):
 	@echo "Downloading deps..."
-	@$(ENVIRONMENT_DIR)/lit install creationix/weblit
+	@$(ENVIRONMENT_DIR)/lit install
 
 run:
 	@echo "Starting server..."
