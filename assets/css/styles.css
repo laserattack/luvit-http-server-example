@@ -34,7 +34,6 @@ footer, main {
 }
 
 footer {
-    margin-top: 100px;
     flex: 0 0 30%;
 }
 
@@ -71,14 +70,6 @@ a {
 }
 
 a:hover {
-    text-decoration: none;
-}
-
-a[hx-get] {
-    color: var(--color-accent);
-}
-
-a[hx-get]:hover {
     text-decoration: none;
 }
 
