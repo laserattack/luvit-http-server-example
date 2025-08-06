@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>hikan.ru</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="pic/favicon.ico?v={{ version }}" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css?v={{ version }}" type="text/css">
+    <script src="scripts/htmx.js?v={{ version }}"></script>
+    <script>
+        document.addEventListener('htmx:afterSwap', function(evt) {
+            const triggeringElement = evt.detail.requestConfig.elt;
+            if (triggeringElement.hasAttribute('data-scroll-top')) {
+                window.scrollTo(0,0);
+            }
+        });
+    </script>
+</head>
+<body>
+    <div style="text-align: center;">
+        <p>
+            <h1>hikan.ru&nbsp;🥶</h1>
+            <code>by serr in saint p city, Russia&nbsp;🌪</code>
+        </p>
+        <p>
+            <a href="/posts/0"
+                hx-get="/posts/0?ajax=true"
+                hx-target="main"
+                hx-swap="outerHTML"
+                hx-push-url="/posts/0"
+                data-scroll-top="true">
+                    main page</a>
+            <a href="/about"
+                hx-get="/about?ajax=true"
+                hx-target="main"
+                hx-swap="outerHTML"
+                hx-push-url="/about"
+                data-scroll-top="true">
+                    about page</a>
+        </p>
+    </div>
+    <main>
+        <div>
+            <h1>
+                what is it?
+            </h1>
+            <p>
+                this is my website. my name is serr and i do a bit of programming
+            </p>
+            <p>
+                i was born in 2003, i'm currently a cybersecurity major at university
+            </p>
+            <p>
+                <code>pronouns: he/him</code>
+            </p>
+        </div>
+        <div>
+            <h1>
+                what do i do?
+            </h1>
+            <p>
+                programming is my lifestyle
+            </p>
+            <p>
+                i love growing in all areas of programming - i am literally interested in everything: web development, low-level programming, formal grammars and a lot more
+            </p>
+        </div>
+        <div>
+            <h1>
+                things i love
+            </h1>
+            <p>
+                > <strong>coffee</strong>. i REALLY love coffee. almost any. and a lot of<br/>
+                > <strong>movies and TV series</strong> (especially TV series). i watch something almost every day<br/>
+                > <strong>true crime</strong>. i'm obsessed with serial killer cases, mysterious disappearances, unsolved murders - all that dark stuff<br/>
+                > <strong>russian underground rap</strong> like Slava KPSS, Zamay, MB Packet, Ovsyankin etc.<br/>
+                > <strong>simple and extensible code</strong>. i think if your code is overly complex, it means you are doing something wrong. most things are simpler than they seem
+            </p>
+            <details>
+                <summary class="pulse-text">click here if you want to see the sites&nbsp;i&nbsp;like</summary>
+                <p>
+                    > huge collection of Xakep issues -  <a href="https://図書館.きく.コム/" target="_blank">図書館.きく.コム</a><br/>
+                    > i like to surf here - <a href="https://neocities.org/browse" target="_blank">neocities.org/browse</a><br/>
+                    > very atmospheric forum about black metal -  <a href="https://www.lycanthropia.net/" target="_blank">lycanthropia</a><br/>
+                    > animated gif search from internet archive - <a href="https://gifcities.org/" target="_blank">gifcities.org</a><br/>
+                    > very cool design - <a href="https://combatbaby.neocities.org/" target="_blank">combatbaby.neocities.org</a><br/>
+                </p>
+            </details>
+        </div>
+    </main>
+    <footer>
+        <div class="pic-container">
+            <img class="pic" src="pic/2.jpg?v={{ version }}" 
+                style="width: 100%; height: 100%;">
+        </div>
+        <div class="pulse-container">
+            <p class="pulse-text" style="margin-bottom: 0;">
+                <code>🎵&nbsp;last played track: </code><code id="lastfm"
+                hx-get="/api/lastfm"
+                hx-trigger="load, every 30s"
+                hx-target="#lastfm"
+                hx-swap="innerHTML">waiting for a response from server... (JavaScript is required)</code><code>&nbsp;🎵</code>
+            </p>
+        </div>
+        <div>
+            <h1>
+                pages
+            </h1>
+            <p>
+                <a href="/posts/0"
+                    hx-get="/posts/0/?ajax=true"
+                    hx-target="main"
+                    hx-swap="outerHTML"
+                    hx-push-url="/posts/0"
+                    data-scroll-top="true">
+                        main page</a>
+                <br>
+                <a href="/about"
+                    hx-get="/about?ajax=true"
+                    hx-target="main"
+                    hx-swap="outerHTML"
+                    hx-push-url="/about"
+                    data-scroll-top="true">
+                        about page</a>
+            </p>
+            <h1>
+                contacts
+            </h1>
+            <p>
+                <a href="https://t.me/semaphoreslover" rel="me" target="_blank">telegram</a>
+            </p>
+            <h1>
+                other
+            </h1>
+            <p>
+                <a href="https://github.com/laserattack" rel="me" target="_blank">github</a><br>
+                <a href="https://mastodon.ml/@serr" rel="me" target="_blank">mastodon</a><br>
+                <a href="https://www.last.fm/ru/user/s3rr" rel="me" target="_blank">lastfm</a><br>
+                <a href="https://t.me/lolistack" rel="me" target="_blank">tg channel with pfps</a>
+            </p>
+            <h1 style="margin-bottom: -5px;">buttons</h1>
+            <p style="display: inline-block;">
+                <img src="pic/buttons/8015ani.gif?v={{ version }}" style="margin: 5px;">
+                <img src="pic/buttons/8015cfe.gif?v={{ version }}" style="margin: 5px;">
+                <a href="https://getfirefox.com/"><img src="pic/buttons/8015firefox.gif?v={{ version }}" style="margin: 5px;"></a>
+                <img src="pic/buttons/8015nobuttons.gif?v={{ version }}" style="margin: 5px;">
+                <img src="pic/buttons/8015tea.gif?v={{ version }}" style="margin: 5px;">
+                <img src="pic/buttons/8015oss.png?v={{ version }}" style="width: 80px; margin: 5px;">
+                <img src="pic/buttons/8015coffeegeek.png?v={{ version }}" style="width: 80px; margin: 5px;">
+                <img src="pic/buttons/8015pie.png?v={{ version }}" style="width: 80px; margin: 5px;">
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

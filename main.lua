@@ -10,6 +10,7 @@ weblit.app
     .use(require('weblit-auto-headers'))
 
     .route({ method = "GET", path = "/" }, require("controllers/home"))
+    .route({ method = "GET", path = "/about" }, require("controllers/about"))
 
     .use(static(pathJoin(module.dir, "assets")))
 
