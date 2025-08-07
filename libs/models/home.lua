@@ -20,12 +20,12 @@ end
 
 local function createPage()
     local template = assert(fs.readFile("templates/home.html"))
-    local cached_at_unix = os.time()
-    local cached_at_date = os.date("%c", cached_at_unix)
+    local cachedAtUnix = os.time()
+    local cachedAtDate = os.date("%c", cachedAtUnix)
 
     local pageParams = {
-        version = cached_at_unix,
-        cached_at = cached_at_date,
+        version = cachedAtUnix,
+        cachedAt = cachedAtDate,
     }
 
     -- Загружает все файлы вида <число>.md из директории parts

@@ -14,7 +14,7 @@ end
 local config = json.decode(jsonContent)
 
 -- Получение/обновление последнего трека
-local last_track = ""
+local lastTrack = ""
 ---@param callback function
 local function getLastTrackFromLastFM(callback)
     local url = string.format(config.base_url, config.username, config.token)
@@ -36,19 +36,19 @@ local function getLastTrackFromLastFM(callback)
             return
         end
         -- Коллбек
-        local track_name = data.recenttracks.track[1].name
-        local artist_name = data.recenttracks.track[1].artist["#text"]
-        local formatted = string.format("%s - %s", track_name, artist_name):gsub("🅴", "[E]")
+        local trackName = data.recenttracks.track[1].name
+        local artistName = data.recenttracks.track[1].artist["#text"]
+        local formatted = string.format("%s - %s", trackName, artistName):gsub("🅴", "[E]")
         callback(formatted, nil)
     end)
 end
 local function updateLastTrack()
     getLastTrackFromLastFM(function(res, err)
-        last_track = (not err and res ~= "") and res or last_track
+        lastTrack = (not err and res ~= "") and res or lastTrack
     end)
 end
 
 return {
     updateLastTrack = updateLastTrack,
-    lastTrack = function() return last_track end
+    lastTrack = function() return lastTrack end
 }
