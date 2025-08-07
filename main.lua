@@ -6,11 +6,12 @@ local pathJoin = require('pathjoin').pathJoin
 ---@type function
 local static = require('weblit-static')
 
--- Декоратор для кэширования запросов
+-- Декоратор для кэширования запросов в RAM
 local c = require('cache')
 
 weblit.app
     .bind({ host = "0.0.0.0", port = 8080 })
+
     .use(require('weblit-logger'))
     .use(require('weblit-auto-headers'))
 

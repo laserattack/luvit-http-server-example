@@ -2,7 +2,8 @@
 local fs = require('coro-fs').chroot("templates")
 
 -- Функция рендера шаблона
-local render = require("templater").render ---@type function
+---@type function
+local render = require("templater").render
 
 local function createPage()
     local template = assert(fs.readFile("home.html"))
