@@ -1,0 +1,7 @@
+# what is it?
+
+this is my website. my name is serr and i do a bit of programming
+
+i was born in 2003, i'm currently a cybersecurity major at university
+
+`pronouns: he/him`
