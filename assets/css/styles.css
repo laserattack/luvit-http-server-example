@@ -1,5 +1,4 @@
 :root {
-    --color-primary: #009199;
     --color-bg: #001122;
     --color-text: lightgray;
     --color-accent: #8DB9EF;
@@ -12,7 +11,7 @@
 /* Основные секции */
 
 html {
-    border-top: 10px solid var(--color-primary);
+    border-top: 10px solid var(--color-accent);;
     padding: 20px;
 }
 
