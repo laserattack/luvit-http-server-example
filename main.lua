@@ -9,7 +9,7 @@ local static = require('weblit-static')
 -- Декоратор для кэширования запросов в RAM
 local c = require('cache')
 
--- Обновление трека каждые 15 секунд
+-- Периодическое обновление трека LastFM
 do
     local lastfm = require('models/lastfm')
     local timer = require('timer')
