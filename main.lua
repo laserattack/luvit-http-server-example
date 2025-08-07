@@ -17,4 +17,5 @@ weblit.app
     .route({ method = "GET", path = "/" }, c(require("controllers/home")))
 
     .use(static(pathJoin(module.dir, "assets")))
+
     .start()
