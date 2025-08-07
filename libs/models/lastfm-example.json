@@ -1,0 +1,5 @@
+{
+    "username": "",
+    "token": "",
+    "base_url": "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=%s&api_key=%s&format=json"
+}

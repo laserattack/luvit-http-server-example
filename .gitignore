@@ -1,3 +1,4 @@
 environment
 deps
 *.tar
+lastfm.json
