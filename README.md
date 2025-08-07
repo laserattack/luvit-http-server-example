@@ -28,6 +28,18 @@ docker rmi luvit-server 2>/dev/null || true
 docker builder prune -f
 ```
 
+## Просто выключение сайта
+
+```bash
+docker stop luvit-server
+```
+
+## Просто включение сайта
+
+```bash
+docker start luvit-server
+```
+
 ## Бэкапчики
 
 Сборка/пересборка сайта + сохранение докер-образа на диск
