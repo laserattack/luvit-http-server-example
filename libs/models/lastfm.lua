@@ -17,7 +17,7 @@ local config = json.decode(jsonContent)
 local lastTrack = ""
 ---@param callback function
 local function getLastTrackFromLastFM(callback)
-    local url = string.format(config.base_url, config.username, config.token)
+    local url = string.format(config.baseUrl, config.username, config.token)
     httpt.httpGET(url, function(res, err)
         -- Возможные ошибки при получении HTTP-запроса
         if err then
