@@ -13,8 +13,8 @@ if err then
 end
 local config = json.decode(jsonContent)
 
+-- Получение/обновление последнего трека
 local last_track = ""
-
 ---@param callback function
 local function getLastTrackFromLastFM(callback)
     local url = string.format(config.base_url, config.username, config.token)
@@ -42,7 +42,6 @@ local function getLastTrackFromLastFM(callback)
         callback(formatted, nil)
     end)
 end
-
 local function updateLastTrack()
     getLastTrackFromLastFM(function(res, err)
         last_track = (not err and res ~= "") and res or last_track
