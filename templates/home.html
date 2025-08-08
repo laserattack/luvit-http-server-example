@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="pic/favicon.ico?v={{ version }}" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css?v={{ version }}" type="text/css">
-    <script src="scripts/htmx.js?v={{ version }}"></script>
+    <script src="scripts/scripts.js?v={{ version }}"></script>
 </head>
 <body>
     <div style="text-align: center;">
@@ -37,11 +37,7 @@
         </div>
         <div class="pulse-container">
             <p class="pulse-text" style="margin-bottom: 0;">
-                <code>🎵&nbsp;last played track: </code><code id="lastfm"
-                hx-get="/api/lastfm"
-                hx-trigger="load, every 30s"
-                hx-target="#lastfm"
-                hx-swap="innerHTML">waiting for a response from server... (JavaScript is required)</code><code>&nbsp;🎵</code>
+                <code>🎵&nbsp;last played track: </code><code id="lastfm">waiting for a response from server... (JavaScript is required)</code><code>&nbsp;🎵</code>
             </p>
         </div>
         <div>

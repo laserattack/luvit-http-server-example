@@ -44,10 +44,8 @@ local function getLastTrackFromLastFM(callback)
             return
         end
         -- Коллбек
-        local trackName = data.recenttracks.track[1].name
-        local artistName = data.recenttracks.track[1].artist["#text"]
-        local formatted = string.format("%s - %s", trackName, artistName):gsub("🅴", "[E]")
-        callback(formatted, nil)
+        local track = data.recenttracks.track[1]
+        callback(json.encode(track), nil)
     end)
 end
 local function updateLastTrack()
