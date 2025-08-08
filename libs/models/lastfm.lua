@@ -14,6 +14,11 @@ end
 local config = json.decode(jsonContent)
 
 -- Получение/обновление последнего трека
+
+-- getLastTrackFromLastFM не блокирует выполнение кода
+-- она передает функцию (function(res, err)) как коллбек в httpGET и сразу завершается
+-- а в httpGET уже по достижении события в event loop этот коллбек вызовется
+
 local lastTrack = ""
 ---@param callback function
 local function getLastTrackFromLastFM(callback)
