@@ -1,5 +1,5 @@
 # Базовый образ - последняя убунту
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 # Копирование файлов в директорию в образе
 COPY . /home/server
