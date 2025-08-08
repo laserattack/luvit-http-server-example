@@ -13,7 +13,7 @@ docker stop $(docker ps -aq --filter ancestor=luvit-profile-site) 2>/dev/null
 docker rm $(docker ps -aq --filter ancestor=luvit-profile-site) 2>/dev/null
 docker rmi luvit-profile-site 2>/dev/null || true
 docker build -t luvit-profile-site .
-docker run -d -it -p 8080:8080 --name luvit-profile-site --restart unless-stopped luvit-profile-site
+docker run -d -it -p <ПОРТ НА КОТОРОМ ХОЧЕШЬ ЗАПУСТИТЬ>:8080 --name luvit-profile-site --restart unless-stopped luvit-profile-site
 docker builder prune -f
 ```
 
@@ -61,6 +61,6 @@ docker stop $(docker ps -aq --filter ancestor=luvit-profile-site) 2>/dev/null
 docker rm $(docker ps -aq --filter ancestor=luvit-profile-site) 2>/dev/null
 docker rmi luvit-profile-site 2>/dev/null || true
 docker load -i luvit-profile-site.tar
-docker run -d -it -p 8080:8080 --name luvit-profile-site --restart unless-stopped luvit-profile-site
+docker run -d -it -p <ПОРТ НА КОТОРОМ ХОЧЕШЬ ЗАПУСТИТЬ>:8080 --name luvit-profile-site --restart unless-stopped luvit-profile-site
 docker builder prune -f
 ```
