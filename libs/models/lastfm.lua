@@ -5,7 +5,7 @@ local json = require("json")
 ---@type function
 local pathJoin = require('pathjoin').pathJoin
 
--- Загрузка конфига
+-- Загрузка конфига LastFM
 local jsonContent, err = fst.readFile(pathJoin(module.dir, "lastfm.json"))
 if err then
     jsonContent, err = fst.readFile(pathJoin(module.dir, "lastfm-example.json"))
