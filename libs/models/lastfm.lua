@@ -1,13 +1,16 @@
 local httpt = require("http-tools")
+local fst = require('fs-tools')
 local json = require("json")
-local fs = require('coro-fs').chroot("libs/models")
+
+---@type function
+local pathJoin = require('pathjoin').pathJoin
 
 -- Загрузка конфига
-local jsonContent, err = fs.readFile("lastfm.json")
+local jsonContent, err = fst.readFile(pathJoin(module.dir, "lastfm.json"))
 if err then
-    jsonContent, err = fs.readFile("lastfm-example.json")
+    jsonContent, err = fst.readFile(pathJoin(module.dir, "lastfm-example.json"))
     if err then
-        print("load config error")
+        io.write("load config error: ", err, "\n")
         os.exit(1)
     end
 end
