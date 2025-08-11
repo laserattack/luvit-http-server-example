@@ -9,9 +9,9 @@ Docker, интернет-соединение
 Сборка/пересборка сайта + запуск
 
 ```bash
-docker stop $(docker ps -aq --filter ancestor=luvit-profile-site) 2>/dev/null
-docker rm $(docker ps -aq --filter ancestor=luvit-profile-site) 2>/dev/null
-docker rmi luvit-profile-site 2>/dev/null || true
+docker stop luvit-profile-site
+docker rm luvit-profile-site
+docker rmi luvit-profile-site
 docker build -t luvit-profile-site .
 docker run -d -it -p <ПОРТ НА КОТОРОМ ХОЧЕШЬ ЗАПУСТИТЬ>:8080 --name luvit-profile-site --restart unless-stopped luvit-profile-site
 docker builder prune -f
@@ -22,9 +22,9 @@ docker builder prune -f
 Выключение + удаление всего что связано с сайтом
 
 ```bash
-docker stop $(docker ps -aq --filter ancestor=luvit-profile-site) 2>/dev/null
-docker rm $(docker ps -aq --filter ancestor=luvit-profile-site) 2>/dev/null
-docker rmi luvit-profile-site 2>/dev/null || true
+docker stop luvit-profile-site
+docker rm luvit-profile-site
+docker rmi luvit-profile-site
 docker builder prune -f
 ```
 
@@ -45,21 +45,21 @@ docker start luvit-profile-site
 Сборка/пересборка сайта + сохранение докер-образа на диск
 
 ```bash
-docker stop $(docker ps -aq --filter ancestor=luvit-profile-site) 2>/dev/null
-docker rm $(docker ps -aq --filter ancestor=luvit-profile-site) 2>/dev/null
-docker rmi luvit-profile-site 2>/dev/null || true
+docker stop luvit-profile-site
+docker rm luvit-profile-site
+docker rmi luvit-profile-site
 docker build -t luvit-profile-site .
 docker save -o luvit-profile-site.tar luvit-profile-site
-docker rmi luvit-profile-site 2>/dev/null || true
+docker rmi luvit-profile-site
 docker builder prune -f
 ```
 
 Загрузка докер-образа с диска + запуск сайта
 
 ```bash
-docker stop $(docker ps -aq --filter ancestor=luvit-profile-site) 2>/dev/null
-docker rm $(docker ps -aq --filter ancestor=luvit-profile-site) 2>/dev/null
-docker rmi luvit-profile-site 2>/dev/null || true
+docker stop luvit-profile-site
+docker rm luvit-profile-site
+docker rmi luvit-profile-site
 docker load -i luvit-profile-site.tar
 docker run -d -it -p <ПОРТ НА КОТОРОМ ХОЧЕШЬ ЗАПУСТИТЬ>:8080 --name luvit-profile-site --restart unless-stopped luvit-profile-site
 docker builder prune -f
