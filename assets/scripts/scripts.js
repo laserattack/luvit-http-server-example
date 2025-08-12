@@ -15,7 +15,7 @@ setTicker(() => {
         .then(data => {
             const track_name = data.name.replace("🅴", "[E]");
             const artist_name = data.artist["#text"];
-            const replacement = `${track_name} - ${artist_name}`
+            const replacement = `${track_name} – ${artist_name}`
             const lastfmElement = document.getElementById("lastfm");
             lastfmElement.textContent = replacement;
         })
